@@ -42,23 +42,70 @@ namespace FizzBuzz2
         [TestMethod]
         public void TestFizzBuzz_Fizz()
         {
-            Assert.IsFalse(checkIfFizzBuzz(3));
+            Assert.AreEqual("Fizz", checkIfFizzBuzz(3));
         }
         [TestMethod]
         public void TestFizzBuzz_Buzz()
         {
-            Assert.IsFalse(checkIfFizzBuzz(5));
+            Assert.AreEqual("Buzz", checkIfFizzBuzz(5));
         }
         [TestMethod]
         public void TestFizzBuzz_FizzBuzz()
         {
-            Assert.IsFalse(checkIfFizzBuzz(15));
+            Assert.AreEqual("FizzBuzz", checkIfFizzBuzz(15));
         }
         [TestMethod]
         public void TestFizzBuzz_NotFizzNotBuzz()
         {
-            Assert.IsFalse(checkIfFizzBuzz(2));
+            Assert.AreEqual("", checkIfFizzBuzz(2));
         }
 
+        
+        
+        
+        public bool checkIfDivBy3(int number)
+        {
+            bool result = false;
+            if (number % 3 == 0) 
+            {
+                result = true;
+            }
+            return result;
+        }
+
+        public bool checkIfDivBy5(int number)
+        {
+            bool result = false;
+            if (number % 5 == 0)
+            {
+                result = true;
+            }
+            return result;
+        }
+
+        public String checkIfFizzBuzz(int number)
+        {
+            String result = "";
+            switch(checkIfDivBy3(number))
+            {
+                case true:
+                    if (checkIfDivBy5(number))
+                    {
+                        result = "FizzBuzz";
+                    }
+                    else
+                    {
+                        result = "Fizz";
+                    }
+                    break;
+                case false:
+                    if (checkIfDivBy5(number))
+                    {
+                        result = "Buzz";
+                    }break;
+            }
+            return result;
+           
+        }
     }
 }
