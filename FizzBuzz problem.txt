@@ -1,0 +1,6 @@
+FizzBuzz
+Pentru un numar dat 
+daca e multiplu de 3 rezultatul trebuie sa fie Fizz iar 
+daca e multiplu de 5 rezultatul trebuie sa fie Buzz.
+
+Daca e multiplu de 3 ?i de 5 rezultatul trebuie sa fie FizzBuzz.
