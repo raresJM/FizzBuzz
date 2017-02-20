@@ -69,6 +69,7 @@ namespace FizzBuzz2
             if (number % 3 == 0) 
             {
                 result = true;
+
             }
             return result;
         }
