@@ -7,36 +7,36 @@ namespace FizzBuzz2
     public class FizzBuzz
     {
         [TestMethod]
-        public void TestCheckDivBy3_GoodScenario_01()
+        public void TestCheckDivByNumber_GoodScenario_01()
         {
-            Assert.IsTrue(checkIfDivBy3(3));
+            Assert.IsTrue(checkIfDivByNumber(3,3));
         }
         [TestMethod]
-        public void TestCheckDivBy3_GoodScenario_02()
+        public void TestCheckDivByNumber_GoodScenario_02()
         {
-            Assert.IsTrue(checkIfDivBy3(15));
-        }
-
-        [TestMethod]
-        public void TestCheckDivBy3_BadScenario_01()
-        {
-            Assert.IsFalse(checkIfDivBy3(2));
+            Assert.IsTrue(checkIfDivByNumber(15,3));
         }
 
         [TestMethod]
-        public void TestCheckDivBy5_GoodScenario_01()
+        public void TestCheckDivByNumber_BadScenario_01()
         {
-            Assert.IsTrue(checkIfDivBy5(5));
+            Assert.IsFalse(checkIfDivByNumber(2,3));
+        }
+
+        [TestMethod]
+        public void TestCheckDivByNumber_GoodScenario_01()
+        {
+            Assert.IsTrue(checkIfDivByNumber(5,5));
         }
         [TestMethod]
-        public void TestCheckDivBy5_GoodScenario_02()
+        public void TestCheckDivByNumber_GoodScenario_02()
         {
-            Assert.IsTrue(checkIfDivBy5(15));
+            Assert.IsTrue(checkIfDivByNumber(15,5));
         }
         [TestMethod]
-        public void TestCheckDivBy5_BadScenario_01()
+        public void TestCheckDivByNumber_BadScenario_01()
         {
-            Assert.IsFalse(checkIfDivBy5(2));
+            Assert.IsFalse(checkIfDivByNumber(2,5));
         }
 
         [TestMethod]
