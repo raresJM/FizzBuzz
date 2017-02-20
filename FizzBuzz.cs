@@ -63,10 +63,10 @@ namespace FizzBuzz2
         
         
         
-        public bool checkIfDivBy3(int number)
+        public bool checkIfDivByNumber(int number, int divizor)
         {
             bool result = false;
-            if (number % 3 == 0) 
+            if (number % divizor == 0) 
             {
                 result = true;
 
@@ -74,15 +74,6 @@ namespace FizzBuzz2
             return result;
         }
 
-        public bool checkIfDivBy5(int number)
-        {
-            bool result = false;
-            if (number % 5 == 0)
-            {
-                result = true;
-            }
-            return result;
-        }
 
         public String checkIfFizzBuzz(int number)
         {
