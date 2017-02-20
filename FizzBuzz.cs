@@ -16,27 +16,26 @@ namespace FizzBuzz2
         {
             Assert.IsTrue(checkIfDivByNumber(15,3));
         }
+        [TestMethod]
+        public void TestCheckDivByNumber_GoodScenario_03()
+        {
+            Assert.IsTrue(checkIfDivByNumber(5, 5));
+        }
+        [TestMethod]
+        public void TestCheckDivByNumber_GoodScenario_04()
+        {
+            Assert.IsTrue(checkIfDivByNumber(15, 5));
+        }
 
         [TestMethod]
         public void TestCheckDivByNumber_BadScenario_01()
         {
             Assert.IsFalse(checkIfDivByNumber(2,3));
         }
-
         [TestMethod]
-        public void TestCheckDivByNumber_GoodScenario_01()
+        public void TestCheckDivByNumber_BadScenario_02()
         {
-            Assert.IsTrue(checkIfDivByNumber(5,5));
-        }
-        [TestMethod]
-        public void TestCheckDivByNumber_GoodScenario_02()
-        {
-            Assert.IsTrue(checkIfDivByNumber(15,5));
-        }
-        [TestMethod]
-        public void TestCheckDivByNumber_BadScenario_01()
-        {
-            Assert.IsFalse(checkIfDivByNumber(2,5));
+            Assert.IsFalse(checkIfDivByNumber(2, 5));
         }
 
         [TestMethod]
@@ -61,8 +60,6 @@ namespace FizzBuzz2
         }
 
         
-        
-        
         public bool checkIfDivByNumber(int number, int divizor)
         {
             bool result = false;
@@ -74,28 +71,21 @@ namespace FizzBuzz2
             return result;
         }
 
-
         public String checkIfFizzBuzz(int number)
         {
             String result = "";
-            switch(checkIfDivBy3(number))
+            if (checkIfDivByNumber(number, 15))
             {
-                case true:
-                    if (checkIfDivBy5(number))
-                    {
-                        result = "FizzBuzz";
-                    }
-                    else
-                    {
-                        result = "Fizz";
-                    }
-                    break;
-                case false:
-                    if (checkIfDivBy5(number))
-                    {
-                        result = "Buzz";
-                    }break;
+                result = "FizzBuzz";
             }
+            else if (checkIfDivByNumber(number, 3))
+            {
+                result = "Fizz";
+            }
+            else if (checkIfDivByNumber(number, 5))
+            {
+                result = "Buzz";
+            } 
             return result;
            
         }
